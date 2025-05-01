@@ -1,17 +1,17 @@
 #include <stdio.h>
-
-int LinearSearch(int array[], int n, int key){
-    int array[] = {12,23,56,3,6,333,8};
-    int n = sizeof(array)/sizeof(array[0]);
-    int key , i = 0;
-
-    
-    for(i=0;i<n;i++){
-        if (array[i] == key){
-            printf("element found at index %d", i);
-            
-        }
+int linearSearch(int arr[], int n, int key) {
+    for(int i = 0; i < n; i++) {
+        if(arr[i] == key)
+            return i;
     }
-
-    
+    return -1;
+}
+int main() {
+    int arr[] = {4, 2, 7, 1, 9}, key = 7, n = 5;
+    int result = linearSearch(arr, n, key);
+    if(result != -1)
+        printf("Found at index %d\n", result);
+    else
+        printf("Not found\n");
+    return 0;
 }
